@@ -21,3 +21,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = os.environ.get('ADMINS')
+
+    # Localhost testing
+    START_NGROK = os.environ.get('START_NGROK') is not None and \
+        os.environ.get('WERKZEUG_RUN_MAIN') is not 'true'
