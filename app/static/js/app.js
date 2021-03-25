@@ -1,9 +1,24 @@
-console.log('Sanity check!')
+console.log("Sanity check!") // this is just a printout
 
-// Get stripe publishable keys
-fetch('/config')
-.then((result) => {return result.json();})
+// Get Stripe publishable key
+fetch("/config")
+.then((result) => { return result.json(); })
 .then((data) => {
-    // Initialize stripe.js
-    const stripe = Stripe(data.publicKey);
+  // Initialize Stripe.js
+  const stripe = Stripe(data.publicKey);
+
+  // Add Event handler
+  document.querySelector("#checkout-button").addEventListener("click", () => {
+    // Get Checkout Session ID
+    fetch("/create-checkout-session")
+    .then((result) => { return result.json(); })
+    .then((data) => {
+      console.log(data);
+      // Redirect to Stripe Checkout
+      return stripe.redirectToCheckout({sessionId: data.sessionId})
+    })
+    .then((res) => {
+      console.log(res);
+    });
+  });
 });
