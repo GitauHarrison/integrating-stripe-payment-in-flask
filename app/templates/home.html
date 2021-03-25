@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-        <div class="row">            
-            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 ">
-                <!-- Empty div -->
-            </div>        
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
+        <div class="row">                               
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
                 <!-- title -->
-                <h1>Flask Stripe</h1>
-            </div>    
-            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 ">
-                <!-- Empty div -->
-            </div>
-        </div>                  
+                <h1>Stripe and Flask Integration Demo</h1>
+            </div>                
+        </div>   
+        <!-- Add Purchase Button Card -->
+        <div class="row">                               
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="img-fluid" style="max-width: 50%; height: auto;" src="{{url_for('static', filename='images/automate_the_boring_stuff.jpg')}}" class="card-img-top" alt="Automate The Boring Stuff">
+                    <div class="card-body">
+                      <h4 class="card-title"><strong>Automate the Boring Stuff</strong></h4>
+                      <p class="card-text">Learn how to use Python to automate the boring stuff</p>
+                      <a href="#" class="btn btn-primary">Purchase</a>
+                    </div>
+                  </div>
+            </div>                
+        </div>   
 {% endblock %}
