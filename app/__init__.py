@@ -27,6 +27,11 @@ def create_app(config_class=Config):
     mail.init_app(app)
     bootstrap.init_app(app)
 
+    stripe_keys = {
+        'secret_key': app.config['STRIPE_SECRET_KEY'],
+        'publishable_key': app.config['STRIPE_PUBLISHABLE_KEY']
+    }
+
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp, url_prefix='/errors')
 

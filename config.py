@@ -28,3 +28,7 @@ class Config(object):
 
     # Heroku logs
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+
+    # Stripe API Keys
+    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
