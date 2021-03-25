@@ -23,7 +23,7 @@ def get_publishable_key():
 
 @bp.route('/create-checkout-session')
 def create_checkout_session():
-    domain_url = 'http://localhost:5000/'
+    domain_url = 'https://stripe-flask-integration.herokuapp.com/'
     stripe.api_key = current_app.config['STRIPE_SECRET_KEY']
     try:
         checkout_session = stripe.checkout.Session.create(
