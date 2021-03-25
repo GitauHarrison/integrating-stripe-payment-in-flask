@@ -86,11 +86,11 @@ STRIPE_ENDPOINT_SECRET=
 (stripe_flask_demo)$ flask run
 ```
 
-8. Once your application is running, you can access your localhost on http://127.0.0.1:5000/. Additionally, if you look carefully in your terminal, you will see: * Tunnel URL: NgrokTunnel: "http://4209c9af6d43.ngrok.io" -> "http://localhost:5000"
+Once your application is running, you can access your localhost on http://127.0.0.1:5000/. Additionally, if you look carefully in your terminal, you will see: * Tunnel URL: NgrokTunnel: "http://4209c9af6d43.ngrok.io" -> "http://localhost:5000"
 
 The HTTP value may be different from the one shown here because I am using the free tier package of ngrok. Paste the link http://4209c9af6d43.ngrok.io on another device, say your mobile phone, to test the application while it is on localhost.
 
-**Make sure to replace `domain_url` value with `http://localhost:5000/` in `app/main/routes.py`**
+Make sure to **replace `domain_url` value with `http://localhost:5000/` in `app/main/routes.py`** for localhost testing. You can also use `ngrok`'s free URLs for `domain_url`.
 
 Another way to obtain ngrok's free public URLs would be to run the command below in a new terminal window:
 
@@ -113,7 +113,11 @@ Connections                   ttl     opn     rt1     rt5     p50     p9
                               0       0       0.00    0.00    0.00    0.
 ```
 
-Note the lines beginning with 'Forwarding'. These show the public URLs that ngrok uses to redirect requests into our service. This method provides you with https://. You can use the `https://` URL to securely test the application, even though it can run on `http://`.
+Note the lines beginning with 'Forwarding'. These show the public URLs that ngrok uses to redirect requests into our service. This method provides you with `https://`. You can use the `https://` URL to securely test the application, even though it can run on `http://`.
+
+### Test Card Numbers
+
+To use card numbers for processing, Stripe provides several test card numbers. You can find them [here](https://stripe.com/docs/testing).
 
 ### Build it Yourself
 If you would like to incorporate this feature, try it out by creating your own project line after line. You can follow this [stripe integraton in flask](https://github.com/GitauHarrison/notes/blob/master/how_to_use_stripe_for_payment.md) guide.
