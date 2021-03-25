@@ -6,7 +6,7 @@ from app.auth.forms import LoginForm, RegisterForm, ResetPasswordForm,\
     ResetPasswordRequestForm
 from app.models import User
 from werkzeug.urls import url_parse
-from app.email import send_password_reset_email
+from app.email.auth import send_password_reset_email
 
 
 @bp.route('/login', methods=['GET', 'POST'])
