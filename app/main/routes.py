@@ -23,7 +23,7 @@ def get_publishable_key():
 
 @bp.route('/create-checkout-session')
 def create_checkout_session():
-    domain_url = 'https://stripe-flask-integration.herokuapp.com/'
+    domain_url = 'http://localhost:5000/'
     stripe.api_key = current_app.config['STRIPE_SECRET_KEY']
     try:
         checkout_session = stripe.checkout.Session.create(
@@ -55,3 +55,28 @@ def success():
 @bp.route('/cancelled')
 def cancel():
     return render_template('cancel.html', title='Cancel')
+
+
+@bp.route("/webhook", methods=["POST"])
+def stripe_webhook():
+    payload = request.get_data(as_text=True)
+    sig_header = request.headers.get("Stripe-Signature")
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, current_app.config["STRIPE_ENDPOINT_SECRET"]
+        )
+
+    except ValueError as e:
+        # Invalid payload
+        return "Invalid payload", 400
+    except stripe.error.SignatureVerificationError as e:
+        # Invalid signature
+        return "Invalid signature", 400
+
+    # Handle the checkout.session.completed event
+    if event["type"] == "checkout.session.completed":
+        print("Payment was successful.")
+        # TODO: you can run some custom code here
+
+    return "Success", 200
