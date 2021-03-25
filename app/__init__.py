@@ -80,7 +80,7 @@ def create_app(config_class=Config):
             app.logger.addHandler(file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('Stripe Flask Integrattion')
+        app.logger.info('Stripe Flask Integration')
     return app
 
 from app import models
