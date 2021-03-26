@@ -69,7 +69,7 @@ def create_app(config_class=Config):
         else:
             if not os.path.exists('logs'):
                 os.mkdir('logs')
-            file_handler = RotatingFileHandler('logs/tinker_app.log',
+            file_handler = RotatingFileHandler('logs/stripe_flask.log',
                                                maxBytes=10240,
                                                backupCount=10
                                                )
