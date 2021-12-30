@@ -51,7 +51,7 @@ $ git clone git@github.com:GitauHarrison/integrating-stripe-payment-in-flask.git
 2. Move into the cloned directory:
 
 ```python
-$ cd integrating-stripe-payment-in-flask
+$ cd integrating-stripe-payment-in-flask/example_1
 ```
 
 3. Create and activate your virtual environment:
