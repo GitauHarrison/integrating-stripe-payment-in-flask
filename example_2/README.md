@@ -1,4 +1,4 @@
-# Integrate Stripe to Your Flask Application (with only Python; no Javascript)
+# Integrate Stripe to Your Flask Application<br>(with only Python; no Javascript)
 
 ![Stripe in Flask](/example_2/app/static/images/stripe.gif)
 

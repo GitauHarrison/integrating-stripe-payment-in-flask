@@ -1,4 +1,4 @@
-# Integrating Stripe with Flask
+# Integrating Stripe with Flask<br>(including Javascript)
 
 Stripe is an online payment processing platform that allows businesses to send and receive payments over the internet. Stripe Payments makes it easier for merchants to start and control an online business by building a set of products that could save many hours, money, and resources that are required for creating and setting up an online payment processor to start accepting online payment from customers.
 
